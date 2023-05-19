@@ -3,7 +3,7 @@ container:
   name: nginx
   image: nginx
 replicaCount: 1
-ns: dev
+ns: uat
 port:
   targetPort: 80
   exposedPort: 80
