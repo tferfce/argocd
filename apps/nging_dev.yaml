@@ -2,10 +2,9 @@ apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
   name: nginxdev
-  namespace: dev
+  namespace: argocd
 spec:
   destination:
-    name: ''
     namespace: nginxdev
     server: 'https://kubernetes.default.svc'
   source:
