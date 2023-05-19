@@ -2,10 +2,11 @@ apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
   name: nginxdev
+  namespace: dev
 spec:
   destination:
     name: ''
-    namespace: default
+    namespace: nginxdev
     server: 'https://kubernetes.default.svc'
   source:
     path: firstci
@@ -14,9 +15,10 @@ spec:
     helm:
       valueFiles:
         - values_dev.yaml
-  sources: []
   project: default
   syncPolicy:
+    syncOptions:
+      - CreateNamespace=true
     automated:
       prune: true
       selfHeal: true
