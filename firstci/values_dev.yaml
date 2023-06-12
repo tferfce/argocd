@@ -2,7 +2,7 @@ app: nginx
 container:
   name: nginx
   image: nginx
-replicaCount: 1
+replicaCount: 2
 ns: dev
 port:
   targetPort: 80
